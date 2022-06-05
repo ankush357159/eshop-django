@@ -17,6 +17,10 @@ class Product(models.Model):
     def get_all_produdcts():
         return Product.objects.all()
 
+    @staticmethod
+    def get_products_by_id(ids):
+        return Product.objects.filter(id__in=ids)
+
 
     @staticmethod
     def get_all_products_by_categoryId(category_id):
